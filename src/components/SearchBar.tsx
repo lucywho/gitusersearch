@@ -1,17 +1,34 @@
-export default function SearchBar() {
+import React from "react"
+
+type Props = {
+    userName: string
+    handleSubmit: (args: string) => string
+}
+
+export default function SearchBar(props: Props) {
+    let searchResult = ""
     return (
         <div className="search-bar">
             <p className="magnifier icon">Q</p>
-            <input
+            <form
                 className="search-username"
-                type="text"
-                placeholder="Search GitHub username…"
-            ></input>
-            <div className="error-message">error here</div>
+                onSubmit={(e: React.SyntheticEvent) => {
+                    e.preventDefault()
 
-            <button className="search" onClick={() => {}}>
-                Search
-            </button>
+                    props.handleSubmit(searchResult)
+                }}
+            >
+                <input
+                    className="user-input"
+                    type="text"
+                    onChange={(event) => (searchResult = event.target.value)}
+                    placeholder="Search GitHub username…"
+                ></input>
+
+                <div className="error-message">error here</div>
+
+                <button className="search">Search</button>
+            </form>
         </div>
     )
 }

@@ -103,6 +103,17 @@ h4 {
     padding: 0 10px 0 35px;
 }
 
+.search-username {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.user-input {
+    width: fit-content;
+    min-width: 200px;
+}
+
 .error-message {
     color: var(--Error-red);
 }
