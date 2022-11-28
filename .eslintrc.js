@@ -1,0 +1,30 @@
+module.exports = {
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        project: ["tsconfig.json", "tsconfig.eslint.json"],
+        sourceType: "module",
+    },
+    env: {
+        browser: true,
+        es6: true,
+        jest: true,
+        node: true,
+    },
+    plugins: ["eslint-plugin-react", "eslint-plugin-react-hooks"],
+    extends: [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+    ],
+    settings: {
+        react: {
+            version: "detect",
+        },
+    },
+    rules: {
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+
+        // ... more rule customizations here...
+    },
+}

@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+:root {
+    --Main-blue: #0079ff;
+    --Light-grey: #697c9a;
+    --Light-grey-blue: #4b6a9b;
+    --Dark-grey: #2b3442;
+    --Dark-grey-blue: #141d2f;
+    --Dark-blue: #1e2a47;
+    --Error-red: #f74646;
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 33px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h4 {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.app {
+    position: relative;
+    width: 1440px;
+    height: 900px;
+}
+
+.wrapper {
+    min-height: 590px;
+    width: 730px;
+    position: absolute;
+    top: 144px;
+    left: 355px;
+}
+
+/*STRAPLINE*/
+
+.strapline {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.devfinder {
+    /* remove when done */
+}
+
+.mode {
+    width: 78px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark {
+    height: 20px;
+    width: 40px;
+}
+
+.moon {
+    height: 20px;
+    width: 20px;
+}
+
+/*SEARCH BAR*/
+
+.search-bar {
+    width: 100%;
+    margin-top: 36px;
+    height: 69px;
+    border: transparent 1px solid;
+    border-radius: 15px;
+    box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 35px;
+}
+
+.error-message {
+    color: var(--Error-red);
+}
+
+.search {
+    background-color: var(--Main-blue);
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+}
+
+/*USER INFO BLOCK*/
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 48px;
+}
+
+.info-left {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-avatar {
+    height: 117px;
+    width: 117px;
+    /* remove when done */
+    border: gray 1px solid;
+    font-size: 10px;
+}
+
+.info-right {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+
+.user-strapline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+
+.us-left {
+    width: 176px;
+}
+
+.user-name {
+    color: var(--Dark-grey);
+}
+
+.user-login {
+    color: var(--Main-blue);
+}
+
+.user-joined {
+    width: fit-content;
+    height: 22px;
+    text-align: right;
+    color: var(--Light-grey);
+}
+
+.user-bio {
+    width: 100%;
+    height: fit-content;
+    min-height: 28px;
+    margin-top: 20px;
+    color: var(--Light-grey-blue);
+}
+
+.user-data {
+    margin-top: 32px;
+}
+
+.user-figures {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 85px;
+    border-radius: 10px;
+}
+
+.user-links {
+    margin-top: 32px;
+    text-align: left;
+}
+.ul-top,
+.ul-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    width: 20px;
+    font-weight: 700;
+}
