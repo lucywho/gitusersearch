@@ -1,11 +1,11 @@
 import React from "react"
 
-type Props = {
-    userName: string
-    handleSubmit: (args: string) => string
-}
+// type Props = {
+//     userName: string
+//     handleSubmit: (args: string) => string
+// }
 
-export default function SearchBar(props: Props) {
+export default function SearchBar() {
     let searchResult = ""
     return (
         <div className="search-bar">
@@ -15,7 +15,7 @@ export default function SearchBar(props: Props) {
                 onSubmit={(e: React.SyntheticEvent) => {
                     e.preventDefault()
 
-                    props.handleSubmit(searchResult)
+                    //props.handleSubmit(searchResult)
                 }}
             >
                 <input
