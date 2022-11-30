@@ -1,24 +1,16 @@
-type Props = {
-name: string;
-login: string;
-avatar_url: string;
-created_at: string;
-bio: string;
-public_repos: number;
-followers: number;
-following: number;
-location: string;
-blog: string;
-twitter_username: string;
-html_url: string;
+import { DataType } from "../data-type"
 
-}
-
-export default function UserInfo(props: Props) {
+export default function UserInfo(props: DataType) {
     return (
         <div className="user-info">
             <div className="info-left">
-                <div className="user-avatar">{props.avatar_url}</div>
+                {props.avatar_url && (
+                    <img
+                        className="user-avatar"
+                        src={props.avatar_url}
+                        alt="user avatar"
+                    />
+                )}
             </div>
             <div className="info-right">
                 <div className="user-strapline">
@@ -31,8 +23,7 @@ export default function UserInfo(props: Props) {
                 </div>
 
                 <div className="user-bio">
-                    {props.bio ? {props.bio} : "This profile has no bio"}
-                     
+                    {props.bio ? `${props.bio}` : "This profile has no bio"}
                 </div>
 
                 <div className="user-data">
@@ -57,8 +48,18 @@ export default function UserInfo(props: Props) {
                                 <p>{props.location}</p>
                             </div>
                             <div className="link">
-                                <p className="icon">X</p>
-                                <p>{props.twitter_username}</p>
+                                <p
+                                    className={`icon ${
+                                        !props.twitter_username && "n-a"
+                                    }`}
+                                >
+                                    X
+                                </p>
+                                {props.twitter_username ? (
+                                    <p>{props.twitter_username}</p>
+                                ) : (
+                                    <p className="n-a">Not Available</p>
+                                )}
                             </div>
                         </div>
                         <div className="ul-bottom">
