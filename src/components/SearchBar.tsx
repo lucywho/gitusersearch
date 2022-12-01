@@ -1,27 +1,32 @@
-import React from "react"
+import { useState } from "react"
+import { ChangeEvent, FormEvent } from "react"
 
-// type Props = {
-//     userName: string
-//     handleSubmit: (args: string) => string
-// }
+type Props = {
+    handleSubmit: (searchResult: string) => void
+}
 
-export default function SearchBar() {
-    let searchResult = ""
+export default function SearchBar({ handleSubmit }: Props) {
+    const [searchResult, setSearchResult] = useState("")
+
+    function handleChange(event: ChangeEvent<HTMLInputElement>) {
+        setSearchResult(event.target.value)
+    }
+
+    function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault()
+        handleSubmit(searchResult)
+        setSearchResult("")
+    }
+
     return (
         <div className="search-bar">
             <p className="magnifier icon">Q</p>
-            <form
-                className="search-username"
-                onSubmit={(e: React.SyntheticEvent) => {
-                    e.preventDefault()
-
-                    //props.handleSubmit(searchResult)
-                }}
-            >
+            <form className="search-username" onSubmit={handleFormSubmit}>
                 <input
                     className="user-input"
                     type="text"
-                    onChange={(event) => (searchResult = event.target.value)}
+                    value={searchResult}
+                    onChange={handleChange}
                     placeholder="Search GitHub username…"
                 ></input>
 

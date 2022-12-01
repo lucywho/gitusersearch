@@ -16,5 +16,5 @@ export type DataType = {
 }
 
 export const fetchData = () => {
-    return Promise.resolve(testData[0])
+    return Promise.resolve(testData)
 }
