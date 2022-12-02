@@ -1,5 +1,5 @@
-import { fetchGitHubData } from "./networkClient"
 import { GitHubUser } from "./data-type"
+import { fetchGitHubData } from "./networkClient"
 
 export async function fetchData(userInput: string) {
     const json = await fetchGitHubData(userInput)

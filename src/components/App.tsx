@@ -12,21 +12,14 @@ export default function App() {
     )
 
     async function handleSubmit(userInput: string) {
-        const gitUserInfo = await fetchData(userInput)
-            .then((res) => {
-                const gitUserInfo = res
-                gitUserInfo === undefined
-                    ? setErrorMessage("No results")
-                    : setErrorMessage(null)
+        await fetchData(userInput).then((res) => {
+            const gitUserInfo = res
+            gitUserInfo === undefined
+                ? setErrorMessage("No results")
+                : setErrorMessage(null)
 
-                setData(gitUserInfo)
-                return gitUserInfo
-            })
-            .then((user) => {
-                return user
-            })
-
-        return gitUserInfo
+            setData(gitUserInfo)
+        })
     }
 
     return (
