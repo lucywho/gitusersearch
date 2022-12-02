@@ -1,21 +1,15 @@
-import CardHeader from "./CardHeader"
-import SearchBar from "./SearchBar"
-import { GitHubUser } from "../data-type"
-import { fetchData } from "../backend"
-import UserInfo from "./UserInfo"
 import { useState } from "react"
-//import { testData } from "../testData"
+import UserInfo from "./UserInfo"
+import SearchBar from "./SearchBar"
+import CardHeader from "./CardHeader"
+import { fetchData } from "../backend"
+import { GitHubUser } from "../data-type"
 
 export default function App() {
     const [data, setData] = useState<GitHubUser | null>()
     const [errorMessage, setErrorMessage] = useState<string | null | undefined>(
         ""
     )
-    //let gitUserInfo: GitHubUser
-
-    // useEffect(() => {
-    //     fetchData().then((d) => setData(d[0]))
-    // }, [])
 
     async function handleSubmit(userInput: string) {
         const gitUserInfo = await fetchData(userInput)
