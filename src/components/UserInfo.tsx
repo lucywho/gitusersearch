@@ -43,33 +43,43 @@ export default function UserInfo(props: DataType) {
                     </div>
                     <div className="user-links">
                         <div className="ul-top">
-                            <div className="link">
+                            <div className={`link ${!props.location && "n-a"}`}>
                                 <p className="icon">X</p>
-                                <p>{props.location}</p>
+                                {props.location ? (
+                                    <p>{props.location}</p>
+                                ) : (
+                                    <p>Not Available</p>
+                                )}
                             </div>
-                            <div className="link">
-                                <p
-                                    className={`icon ${
-                                        !props.twitter_username && "n-a"
-                                    }`}
-                                >
-                                    X
-                                </p>
+                            <div
+                                className={`link ${
+                                    !props.twitter_username && "n-a"
+                                }`}
+                            >
+                                <p className="icon">X</p>
                                 {props.twitter_username ? (
                                     <p>{props.twitter_username}</p>
                                 ) : (
-                                    <p className="n-a">Not Available</p>
+                                    <p>Not Available</p>
                                 )}
                             </div>
                         </div>
                         <div className="ul-bottom">
-                            <div className="link">
+                            <div className={`link ${!props.blog && "n-a"}`}>
                                 <p className="icon">X</p>
-                                <p>{props.blog}</p>
+                                {props.blog ? (
+                                    <a href={`${props.blog}`}>{props.blog}</a>
+                                ) : (
+                                    <p>Not Available</p>
+                                )}
                             </div>
-                            <div className="link">
+                            <div className={`link ${!props.html_url && "n-a"}`}>
                                 <p className="icon">X</p>
-                                <p>@{props.html_url}</p>
+                                {props.html_url ? (
+                                    <a href={`${props.html_url}`}>@github</a>
+                                ) : (
+                                    <p>Not Available</p>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -20,9 +20,9 @@ export default function App() {
             return obj.login === userInput
         })
 
-        if (gitUserInfo[0] === undefined) {
-            setErrorMessage("user not found")
-        }
+        gitUserInfo[0] === undefined
+            ? setErrorMessage("No results")
+            : setErrorMessage(null)
 
         setData(gitUserInfo[0])
 
