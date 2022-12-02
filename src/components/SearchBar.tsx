@@ -1,21 +1,23 @@
 import { useState } from "react"
 import { ChangeEvent, FormEvent } from "react"
+import { DataType } from "../data-type"
 
 type Props = {
-    handleSubmit: (searchResult: string) => void
+    handleSubmit: (userInput: string) => DataType[]
+    errorMessage: string | undefined | null
 }
 
-export default function SearchBar({ handleSubmit }: Props) {
-    const [searchResult, setSearchResult] = useState("")
+export default function SearchBar({ handleSubmit, errorMessage }: Props) {
+    const [userInput, setUserInput] = useState("")
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
-        setSearchResult(event.target.value)
+        setUserInput(event.target.value)
     }
 
     function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        handleSubmit(searchResult)
-        setSearchResult("")
+        handleSubmit(userInput)
+        setUserInput("")
     }
 
     return (
@@ -25,12 +27,13 @@ export default function SearchBar({ handleSubmit }: Props) {
                 <input
                     className="user-input"
                     type="text"
-                    value={searchResult}
+                    value={userInput}
                     onChange={handleChange}
                     placeholder="Search GitHub username…"
                 ></input>
-
-                <div className="error-message">error here</div>
+                {errorMessage && (
+                    <div className="error-message">{errorMessage}</div>
+                )}
 
                 <button className="search">Search</button>
             </form>
