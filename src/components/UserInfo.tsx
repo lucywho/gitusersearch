@@ -1,6 +1,6 @@
-import { DataType } from "../data-type"
+import { GitHubUser } from "../data-type"
 
-export default function UserInfo(props: DataType) {
+export default function UserInfo(props: GitHubUser) {
     return (
         <div className="user-info">
             <div className="info-left">

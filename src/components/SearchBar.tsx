@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { ChangeEvent, FormEvent } from "react"
-import { DataType } from "../data-type"
 
 type Props = {
-    handleSubmit: (userInput: string) => DataType[]
+    handleSubmit: (userInput: string) => void
     errorMessage: string | undefined | null
 }
 

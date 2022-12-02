@@ -1,6 +1,4 @@
-import { testData } from "./testData"
-
-export type DataType = {
+export type GitHubUser = {
     name: string
     login: string | null
     avatar_url?: string | null
@@ -13,8 +11,4 @@ export type DataType = {
     blog?: string | null
     twitter_username?: string | null
     html_url?: string | null
-}
-
-export const fetchData = () => {
-    return Promise.resolve(testData)
 }

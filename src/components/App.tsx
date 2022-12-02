@@ -1,30 +1,36 @@
 import CardHeader from "./CardHeader"
 import SearchBar from "./SearchBar"
-import { DataType, fetchData } from "../data-type"
+import { GitHubUser } from "../data-type"
+import { fetchData } from "../backend"
 import UserInfo from "./UserInfo"
-import { useEffect, useState } from "react"
-import { testData } from "../testData"
+import { useState } from "react"
+//import { testData } from "../testData"
 
 export default function App() {
-    const [data, setData] = useState<DataType | null>()
+    const [data, setData] = useState<GitHubUser | null>()
     const [errorMessage, setErrorMessage] = useState<string | null | undefined>(
         ""
     )
+    //let gitUserInfo: GitHubUser
 
     // useEffect(() => {
     //     fetchData().then((d) => setData(d[0]))
     // }, [])
 
-    function handleSubmit(userInput: string): DataType[] {
-        const gitUserInfo = testData.filter(function (obj) {
-            return obj.login === userInput
-        })
+    async function handleSubmit(userInput: string) {
+        const gitUserInfo = await fetchData(userInput)
+            .then((res) => {
+                const gitUserInfo = res
+                gitUserInfo === undefined
+                    ? setErrorMessage("No results")
+                    : setErrorMessage(null)
 
-        gitUserInfo[0] === undefined
-            ? setErrorMessage("No results")
-            : setErrorMessage(null)
-
-        setData(gitUserInfo[0])
+                setData(gitUserInfo)
+                return gitUserInfo
+            })
+            .then((user) => {
+                return user
+            })
 
         return gitUserInfo
     }
