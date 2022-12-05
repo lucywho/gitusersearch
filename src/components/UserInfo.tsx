@@ -1,5 +1,5 @@
 import { GitHubUser } from "../data-type"
-const LinkIcon = require("../assets/link-lm.png")
+import LinkIcon from "../assets/link-lm.png"
 
 export default function UserInfo(props: GitHubUser) {
     return (

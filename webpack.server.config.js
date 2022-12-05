@@ -23,4 +23,7 @@ module.exports = {
             },
         ],
     },
+    output: {
+        filename: "server.js",
+    }
 }
