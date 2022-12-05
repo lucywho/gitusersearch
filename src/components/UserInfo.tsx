@@ -1,5 +1,6 @@
 import { GitHubUser } from "../data-type"
-const LinkIcon = require( "../assets/link-lm.png" );
+
+const LinkIcon = require("../assets/link-lm.png")
 
 export default function UserInfo(props: GitHubUser) {
     return (
@@ -45,7 +46,11 @@ export default function UserInfo(props: GitHubUser) {
                     <div className="user-links">
                         <div className="ul-top">
                             <div className={`link ${!props.location && "n-a"}`}>
-                                <p className="icon">X</p>
+                                <img
+                                    className="icon"
+                                    src=""
+                                    alt="location icon"
+                                ></img>
                                 {props.location ? (
                                     <p>{props.location}</p>
                                 ) : (
@@ -57,7 +62,11 @@ export default function UserInfo(props: GitHubUser) {
                                     !props.twitter_username && "n-a"
                                 }`}
                             >
-                                <p className="icon">X</p>
+                                <img
+                                    className="icon"
+                                    src=""
+                                    alt="twitter logo"
+                                ></img>
                                 {props.twitter_username ? (
                                     <p>{props.twitter_username}</p>
                                 ) : (
@@ -69,7 +78,7 @@ export default function UserInfo(props: GitHubUser) {
                             <div className={`link ${!props.blog && "n-a"}`}>
                                 <img
                                     className="icon"
-                                    src={LinkIcon}
+                                    src=""
                                     alt="chain link icon"
                                 ></img>
                                 {props.blog ? (
@@ -79,7 +88,11 @@ export default function UserInfo(props: GitHubUser) {
                                 )}
                             </div>
                             <div className={`link ${!props.html_url && "n-a"}`}>
-                                <p className="icon">X</p>
+                                <img
+                                    className="icon"
+                                    src=""
+                                    alt="building icon"
+                                ></img>
                                 {props.html_url ? (
                                     <a href={`${props.html_url}`}>@github</a>
                                 ) : (
