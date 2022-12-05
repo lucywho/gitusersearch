@@ -78,7 +78,7 @@ export default function UserInfo(props: GitHubUser) {
                             <div className={`link ${!props.blog && "n-a"}`}>
                                 <img
                                     className="icon"
-                                    src=""
+                                    src={LinkIcon}
                                     alt="chain link icon"
                                 ></img>
                                 {props.blog ? (
