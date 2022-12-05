@@ -16,5 +16,5 @@
         "strict": true,
         "types": ["react/next", "react-dom/next"]
     },
-    "include": ["src"]
+    "include": ["src", "types"]
 }
