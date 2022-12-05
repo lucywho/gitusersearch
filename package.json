@@ -5,8 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev:server": "tsnd --files --respawn src/server/server.tsx --ignore-watch node_modules,dist",
-        "dev:bundler": "webpack -w --mode=development"
+        "dev:server": "tsnd --files --respawn dist/server.js --ignore-watch node_modules,dist",
+        "dev:bundle-client": "webpack -w --mode=development",
+        "dev:bundle-server": "webpack -w --mode=development --config webpack.server.config.js",
+        "dev:bundler": "npm run dev:bundle-client & npm run dev:bundle-server"
     },
     "author": "",
     "license": "ISC",
