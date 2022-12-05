@@ -1,4 +1,5 @@
 import { GitHubUser } from "../data-type"
+import LinkIcon from "src/assets/link-lm.png"
 
 export default function UserInfo(props: GitHubUser) {
     return (
@@ -28,15 +29,15 @@ export default function UserInfo(props: GitHubUser) {
 
                 <div className="user-data">
                     <div className="user-figures">
-                        <div className="group-2-left">
+                        <div className="uf-left">
                             <h4>Repos</h4>
                             <p>{props.public_repos}</p>
                         </div>
-                        <div className="group-2-center">
+                        <div className="uf-center">
                             <h4>Followers</h4>
                             <p>{props.followers}</p>
                         </div>
-                        <div className="group-2-right">
+                        <div className="uf-right">
                             <h4>Following</h4>
                             <p>{props.following}</p>
                         </div>
@@ -66,7 +67,11 @@ export default function UserInfo(props: GitHubUser) {
                         </div>
                         <div className="ul-bottom">
                             <div className={`link ${!props.blog && "n-a"}`}>
-                                <p className="icon">X</p>
+                                <img
+                                    className="icon"
+                                    src={LinkIcon}
+                                    alt="chain link icon"
+                                ></img>
                                 {props.blog ? (
                                     <a href={`${props.blog}`}>{props.blog}</a>
                                 ) : (
