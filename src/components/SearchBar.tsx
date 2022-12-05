@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { ChangeEvent, FormEvent } from "react"
-//import magnifierIcon from "../assets/magnifier.png"
 
 type Props = {
     handleSubmit: (userInput: string) => void

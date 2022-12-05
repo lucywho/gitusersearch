@@ -1,5 +1,5 @@
 import { GitHubUser } from "../data-type"
-import LinkIcon from "../assets/link-lm.png";
+const LinkIcon = require("../assets/link-lm.png")
 
 export default function UserInfo(props: GitHubUser) {
     return (
@@ -77,7 +77,7 @@ export default function UserInfo(props: GitHubUser) {
                             <div className={`link ${!props.blog && "n-a"}`}>
                                 <img
                                     className="icon"
-                                    src=""
+                                    src={LinkIcon}
                                     alt="chain link icon"
                                 ></img>
                                 {props.blog ? (
