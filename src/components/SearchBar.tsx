@@ -5,9 +5,15 @@ import SearchIcon from "../assets/magnifier.png"
 type Props = {
     handleSubmit: (userInput: string) => void
     errorMessage: string | undefined | null
+    darkMode: Boolean
 }
 
-export default function SearchBar({ handleSubmit, errorMessage }: Props) {
+export default function SearchBar({
+    handleSubmit,
+    errorMessage,
+    darkMode,
+}: Props) {
+    console.log("stop the linter moaning", darkMode)
     const [userInput, setUserInput] = useState("")
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {

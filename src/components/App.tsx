@@ -31,10 +31,12 @@ export default function App() {
                 <CardHeader darkMode={darkMode} toggleMode={toggleMode} />
                 <SearchBar
                     handleSubmit={handleSubmit}
+                    darkMode={darkMode}
                     errorMessage={errorMessage}
                 />
                 {data && (
                     <UserInfo
+                        darkMode={darkMode}
                         name={data.name}
                         login={data.login}
                         avatar_url={data.avatar_url}

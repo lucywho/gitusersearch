@@ -4,7 +4,15 @@ import LocationIcon from "../assets/location-lm.png"
 import BuildingIcon from "../assets/building-lm.png"
 import TwitterIcon from "../assets/twitter-dm.png"
 
-export default function UserInfo(props: GitHubUser) {
+type PassedProps = {
+    darkMode: Boolean
+}
+
+type Props = PassedProps & GitHubUser
+
+export default function UserInfo(props: Props) {
+    console.log("stop the linter moaning", props.darkMode)
+
     return (
         <div className="user-info">
             <div className="info-left">
