@@ -1,5 +1,8 @@
 import { GitHubUser } from "../data-type"
 import LinkIcon from "../assets/link-lm.png"
+import LocationIcon from "../assets/location-lm.png"
+import BuildingIcon from "../assets/building-lm.png"
+import TwitterIcon from "../assets/twitter-dm.png"
 
 export default function UserInfo(props: GitHubUser) {
     return (
@@ -30,16 +33,16 @@ export default function UserInfo(props: GitHubUser) {
                 <div className="user-data">
                     <div className="user-figures">
                         <div className="uf-left">
-                            <h4>Repos</h4>
-                            <p>{props.public_repos}</p>
+                            <p>Repos</p>
+                            <p className="figure">{props.public_repos}</p>
                         </div>
                         <div className="uf-center">
-                            <h4>Followers</h4>
-                            <p>{props.followers}</p>
+                            <p>Followers</p>
+                            <p className="figure">{props.followers}</p>
                         </div>
                         <div className="uf-right">
-                            <h4>Following</h4>
-                            <p>{props.following}</p>
+                            <p>Following</p>
+                            <p className="figure">{props.following}</p>
                         </div>
                     </div>
                     <div className="user-links">
@@ -47,7 +50,7 @@ export default function UserInfo(props: GitHubUser) {
                             <div className={`link ${!props.location && "n-a"}`}>
                                 <img
                                     className="icon"
-                                    src=""
+                                    src={LocationIcon}
                                     alt="location icon"
                                 ></img>
                                 {props.location ? (
@@ -62,8 +65,8 @@ export default function UserInfo(props: GitHubUser) {
                                 }`}
                             >
                                 <img
-                                    className="icon"
-                                    src=""
+                                    className="icon twitter"
+                                    src={TwitterIcon}
                                     alt="twitter logo"
                                 ></img>
                                 {props.twitter_username ? (
@@ -89,7 +92,7 @@ export default function UserInfo(props: GitHubUser) {
                             <div className={`link ${!props.html_url && "n-a"}`}>
                                 <img
                                     className="icon"
-                                    src=""
+                                    src={BuildingIcon}
                                     alt="building icon"
                                 ></img>
                                 {props.html_url ? (

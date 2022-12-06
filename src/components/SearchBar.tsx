@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ChangeEvent, FormEvent } from "react"
+import SearchIcon from "../assets/magnifier.png"
 
 type Props = {
     handleSubmit: (userInput: string) => void
@@ -21,7 +22,11 @@ export default function SearchBar({ handleSubmit, errorMessage }: Props) {
 
     return (
         <div className="search-bar">
-            <img className="magnifier icon" src="" alt="magnifying glass"></img>
+            <img
+                className="magnifier icon"
+                src={SearchIcon}
+                alt="magnifying glass"
+            ></img>
             <form className="search-username" onSubmit={handleFormSubmit}>
                 <input
                     className="user-input"

@@ -26,6 +26,7 @@ body,
 a {
     text-decoration: none;
     color: inherit;
+    background-color: transparent;
 }
 
 a:hover {
@@ -69,7 +70,7 @@ h4 {
 }
 
 .n-a {
-    color: var(--Light-grey);
+    opacity: 0.5;
 }
 
 /*STRAPLINE*/
@@ -92,16 +93,28 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--Light-grey);
 }
 
 .dark {
     height: 20px;
+    margin-right: 1rem;
     width: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: right;
+    letter-spacing: 2.5px;
 }
 
 .moon {
     height: 20px;
     width: 20px;
+    border-radius: 100%;
+    background-color: transparent;
+    filter: invert(51%) sepia(25%) saturate(496%) hue-rotate(177deg)
+        brightness(88%) contrast(80%)
+        drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /*SEARCH BAR*/
@@ -131,6 +144,8 @@ h4 {
     width: fit-content;
     min-width: 200px;
     border: none;
+    outline: none;
+    background-color: inherit;
 }
 
 .error-message {
@@ -144,7 +159,7 @@ h4 {
     background-color: var(--Main-blue);
     border: none;
     border-radius: 10px;
-    color: var(--App-white);
+    color: #fff;
     display: flex;
     font-weight: 700;
     height: 50px;
@@ -191,7 +206,6 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 50px;
     background-color: inherit;
 }
 
@@ -229,7 +243,7 @@ h4 {
 
 .user-data {
     margin-top: 32px;
-    background-color: inherit;
+    background-color: var(--App-white);
 }
 
 .user-figures {
@@ -241,10 +255,13 @@ h4 {
     border-radius: 10px;
 }
 
+.figure {
+    font-weight: 700;
+}
+
 .user-links {
     margin-top: 32px;
     text-align: left;
-
     background-color: var(--App-white);
 }
 .ul-top,
@@ -252,16 +269,40 @@ h4 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: none;
+    background-color: var(--App-white);
+}
+
+.ul-top {
+    margin-bottom: 21px;
 }
 
 .link {
     width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: var(--App-white);
+}
+
+.link p,
+.link a {
+    background-color: transparent;
+    color: var(--Light-grey-blue);
 }
 
 .icon {
-    width: 20px;
+    background-color: transparent;
     font-weight: 700;
+    max-height: 20px;
+    max-width: 20px;
+    margin-right: 1rem;
+}
+
+.twitter {
+    filter: invert(40%) sepia(9%) saturate(2718%) hue-rotate(178deg)
+        brightness(94%) contrast(83%);
+}
+
+.twitter .n-a {
+    filter: invert(40%) sepia(15%) saturate(1469%) hue-rotate(178deg)
+        brightness(96%) contrast(91%);
 }
