@@ -535,6 +535,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/assets/sun-lm.png":
+/*!*******************************!*\
+  !*** ./src/assets/sun-lm.png ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7d52ed35a1f229eb7aadd129c0d27497.png\");\n\n//# sourceURL=webpack://gitusersearch/./src/assets/sun-lm.png?");
+
+/***/ }),
+
 /***/ "./src/assets/twitter-dm.png":
 /*!***********************************!*\
   !*** ./src/assets/twitter-dm.png ***!
@@ -1390,7 +1401,7 @@ eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = 
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar moon_dark_png_1 = __importDefault(__webpack_require__(/*! ../assets/moon-dark.png */ \"./src/assets/moon-dark.png\"));\nfunction CardHeader() {\n    return ((0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: \"strapline\" }, { children: [(0, jsx_runtime_1.jsx)(\"h1\", __assign({ className: \"devfinder\" }, { children: \"devfinder\" })), (0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: \"mode\" }, { children: [(0, jsx_runtime_1.jsx)(\"p\", __assign({ className: \"dark\" }, { children: \"DARK\" })), (0, jsx_runtime_1.jsx)(\"img\", { className: \"moon \", src: moon_dark_png_1.default, alt: \"moon icon\" })] }))] })));\n}\nexports[\"default\"] = CardHeader;\n\n\n//# sourceURL=webpack://gitusersearch/./src/components/CardHeader.tsx?");
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __read = (this && this.__read) || function (o, n) {\n    var m = typeof Symbol === \"function\" && o[Symbol.iterator];\n    if (!m) return o;\n    var i = m.call(o), r, ar = [], e;\n    try {\n        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);\n    }\n    catch (error) { e = { error: error }; }\n    finally {\n        try {\n            if (r && !r.done && (m = i[\"return\"])) m.call(i);\n        }\n        finally { if (e) throw e.error; }\n    }\n    return ar;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar moon_dark_png_1 = __importDefault(__webpack_require__(/*! ../assets/moon-dark.png */ \"./src/assets/moon-dark.png\"));\nvar sun_lm_png_1 = __importDefault(__webpack_require__(/*! ../assets/sun-lm.png */ \"./src/assets/sun-lm.png\"));\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nfunction CardHeader() {\n    var _a = __read((0, react_1.useState)(false), 2), darkMode = _a[0], toggleDarkMode = _a[1];\n    return ((0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: \"strapline\" }, { children: [(0, jsx_runtime_1.jsx)(\"h1\", __assign({ className: \"devfinder\" }, { children: \"devfinder\" })), (0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: \"mode\", onClick: function () { return toggleDarkMode(!darkMode); } }, { children: [(0, jsx_runtime_1.jsx)(\"p\", __assign({ className: \"dark-light \".concat(darkMode && \"dark\") }, { children: darkMode ? \"LIGHT\" : \"DARK\" })), (0, jsx_runtime_1.jsx)(\"img\", { className: \"sun-moon\", src: darkMode ? { MoonIcon: moon_dark_png_1.default } : { SunIcon: sun_lm_png_1.default }, alt: darkMode ? \"moon icon\" : \"sun icon\" })] }))] })));\n}\nexports[\"default\"] = CardHeader;\n\n\n//# sourceURL=webpack://gitusersearch/./src/components/CardHeader.tsx?");
 
 /***/ }),
 
