@@ -10,6 +10,7 @@ export default function App() {
     const [errorMessage, setErrorMessage] = useState<string | null | undefined>(
         ""
     )
+    const [darkMode, toggleDarkMode] = useState<Boolean>(false)
 
     async function handleSubmit(userInput: string) {
         await fetchData(userInput).then((res) => {
@@ -22,10 +23,12 @@ export default function App() {
         })
     }
 
+    const toggleMode = () => toggleDarkMode(!darkMode)
+
     return (
         <div className="app">
             <div className="wrapper">
-                <CardHeader />
+                <CardHeader darkMode={darkMode} toggleMode={toggleMode} />
                 <SearchBar
                     handleSubmit={handleSubmit}
                     errorMessage={errorMessage}
