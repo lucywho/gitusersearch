@@ -362,8 +362,60 @@ h4 {
 
 /* MOBILE */
 @media only screen and (max-width: 629px) {
+    .search-bar {
+        font-size: 0.88rem;
+    }
+
+    .info-left {
+        margin-right: 1rem;
+        width: 70px;
+    }
+
+    .user-avatar {
+        height: 70px;
+        width: 70px;
+    }
+
+    .info-right {
+        min-height: 0;
+    }
+
+    .user-name {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .user-login,
+    .user-joined {
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+
+    .user-joined {
+        height: 0.8rem;
+    }
+
+    .user-bio {
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+
+    .user-figures {
+        font-size: 0.7rem;
+    }
+
+    .figure {
+        font-size: 1rem;
+    }
+
     .ul-top,
     .ul-bottom {
         flex-direction: column;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    .user-links .link {
+        padding: 0.6rem 0;
     }
 }
