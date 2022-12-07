@@ -22,6 +22,10 @@ body,
     -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+    display: flex;
+}
+
 a {
     background-color: transparent;
     color: inherit;
@@ -61,10 +65,12 @@ h4 {
     justify-content: center;
     min-height: 100vh;
     width: 100vw;
+    padding: 10px 100px;
 }
 
 .wrapper {
-    width: 730px;
+    min-width: 50vw;
+    max-width: 50vw;
 }
 
 .n-a {
@@ -129,6 +135,7 @@ h4 {
     justify-content: space-between;
     margin-top: 36px;
     padding: 0 10px 0 35px;
+
     width: 100%;
 }
 
@@ -191,8 +198,6 @@ h4 {
 
 .info-left {
     background-color: inherit;
-    display: flex;
-    justify-content: center;
     margin-right: 40px;
     width: 200px;
 }
@@ -272,6 +277,7 @@ h4 {
     margin-top: 32px;
     text-align: left;
 }
+
 .ul-top,
 .ul-bottom {
     background-color: var(--App-white);
@@ -313,4 +319,51 @@ h4 {
 .twitter .n-a {
     filter: brightness(0) saturate(100%) invert(40%) sepia(15%) saturate(1469%)
         hue-rotate(178deg) brightness(96%) contrast(91%);
+}
+
+/*TABLET*/
+
+@media only screen and (max-width: 1250px) {
+    .wrapper {
+        min-width: 55vw;
+        max-width: 55vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .wrapper {
+        min-width: 60vw;
+        max-width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        min-width: 75vw;
+        max-width: 75vw;
+    }
+
+    .info-right {
+        min-height: 120px;
+        align-items: left;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .user-login {
+        margin: 4px 0;
+    }
+
+    .user-data {
+        padding: 0;
+        margin-top: 37px;
+    }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 629px) {
+    .ul-top,
+    .ul-bottom {
+        flex-direction: column;
+    }
 }

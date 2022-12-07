@@ -1,20 +1,22 @@
 import { GitHubUser } from "./data-type"
 import { fetchGitHubData } from "./networkClient"
 
-function cleanUpDate(created: string) {
+function cleanUpDate(created: string): string {
     let date = new Date(created)
     let month = date.toLocaleDateString("default", { month: "short" })
     return `${date.getDate()} ${month} ${date.getFullYear()}`
 }
 
-export async function fetchData(userInput: string) {
+export async function fetchData(
+    userInput: string
+): Promise<GitHubUser | undefined> {
     const json = await fetchGitHubData(userInput)
 
     if (!json) {
         return
     }
 
-    const cleanDate = cleanUpDate(json.created_at)
+    const cleanDate: string = cleanUpDate(json.created_at)
 
     const newUser: GitHubUser = {
         name: json.name,
