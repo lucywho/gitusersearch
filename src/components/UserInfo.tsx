@@ -11,10 +11,10 @@ type PassedProps = {
 type Props = PassedProps & GitHubUser
 
 export default function UserInfo(props: Props) {
-    console.log("stop the linter moaning", props.darkMode)
+    let darkMode = props.darkMode
 
     return (
-        <div className="user-info">
+        <div className={`user-info ${darkMode && "dark"}`}>
             <div className="info-top">
                 <div className="info-left">
                     {props.avatar_url && (
@@ -27,18 +27,22 @@ export default function UserInfo(props: Props) {
                 </div>
                 <div className="info-right">
                     <div className="name-login">
-                        <h1 className="user-name">{props.name}</h1>
+                        <h1 className={`user-name ${darkMode && "dark"}`}>
+                            {props.name}
+                        </h1>
                         <h3 className="user-login">@{props.login}</h3>
                     </div>
 
-                    <h4 className="user-joined">Joined {props.created_at}</h4>
+                    <h4 className={`user-joined ${darkMode && "dark"}`}>
+                        Joined {props.created_at}
+                    </h4>
                 </div>
             </div>
             <div className="user-data">
-                <div className="user-bio">
+                <div className={`user-bio ${darkMode && "dark"}`}>
                     {props.bio ? `${props.bio}` : "This profile has no bio"}
                 </div>
-                <div className="user-figures">
+                <div className={`user-figures ${darkMode && "dark"}`}>
                     <div className="uf">
                         <p>Repos</p>
                         <p className="figure">{props.public_repos}</p>
@@ -52,11 +56,15 @@ export default function UserInfo(props: Props) {
                         <p className="figure">{props.following}</p>
                     </div>
                 </div>
-                <div className="user-links">
-                    <div className="ul-top">
-                        <div className={`link ${!props.location && "n-a"}`}>
+                <div className={`user-links ${darkMode && "dark"}`}>
+                    <div className={`ul-left ${darkMode && "dark"}`}>
+                        <div
+                            className={`link ${!props.location && "n-a"} ${
+                                darkMode && "dark"
+                            }`}
+                        >
                             <img
-                                className="icon"
+                                className={`icon ${darkMode && "dark"}`}
                                 src={LocationIcon}
                                 alt="location icon"
                             ></img>
@@ -67,26 +75,12 @@ export default function UserInfo(props: Props) {
                             )}
                         </div>
                         <div
-                            className={`link ${
-                                !props.twitter_username && "n-a"
+                            className={`link ${!props.blog && "n-a"} ${
+                                darkMode && "dark"
                             }`}
                         >
                             <img
-                                className="icon twitter"
-                                src={TwitterIcon}
-                                alt="twitter logo"
-                            ></img>
-                            {props.twitter_username ? (
-                                <p>{props.twitter_username}</p>
-                            ) : (
-                                <p>Not Available</p>
-                            )}
-                        </div>
-                    </div>
-                    <div className="ul-bottom">
-                        <div className={`link ${!props.blog && "n-a"}`}>
-                            <img
-                                className="icon"
+                                className={`icon ${darkMode && "dark"}`}
                                 src={LinkIcon}
                                 alt="chain link icon"
                             ></img>
@@ -96,9 +90,31 @@ export default function UserInfo(props: Props) {
                                 <p>Not Available</p>
                             )}
                         </div>
-                        <div className={`link ${!props.html_url && "n-a"}`}>
+                    </div>
+                    <div className={`ul-right ${darkMode && "dark"}`}>
+                        <div
+                            className={`link ${
+                                !props.twitter_username && "n-a"
+                            } ${darkMode && "dark"}`}
+                        >
                             <img
-                                className="icon"
+                                className={`icon ${darkMode && "dark"}`}
+                                src={TwitterIcon}
+                                alt="twitter logo"
+                            ></img>
+                            {props.twitter_username ? (
+                                <p>{props.twitter_username}</p>
+                            ) : (
+                                <p>Not Available</p>
+                            )}
+                        </div>
+                        <div
+                            className={`link ${!props.html_url && "n-a"} ${
+                                darkMode && "dark"
+                            }`}
+                        >
+                            <img
+                                className={`icon ${darkMode && "dark"}`}
                                 src={BuildingIcon}
                                 alt="building icon"
                             ></img>

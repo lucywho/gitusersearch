@@ -68,13 +68,14 @@ h4 {
     padding: 10px 100px;
 }
 
+.app.dark {
+    background-color: var(--Dark-grey-blue);
+    color: #fff;
+}
+
 .wrapper {
     min-width: 50vw;
     max-width: 50vw;
-}
-
-.n-a {
-    opacity: 0.5;
 }
 
 /*STRAPLINE*/
@@ -96,6 +97,10 @@ h4 {
     justify-content: space-between;
     opacity: 70%;
     width: fit-content;
+}
+
+.mode.dark {
+    color: #fff;
 }
 
 .mode:hover {
@@ -122,6 +127,11 @@ h4 {
     max-width: 20px;
 }
 
+.sun-moon.dark {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+        hue-rotate(283deg) brightness(110%) contrast(101%);
+}
+
 /*SEARCH BAR*/
 
 .search-bar {
@@ -135,8 +145,11 @@ h4 {
     justify-content: space-between;
     margin-top: 36px;
     padding: 0 10px 0 35px;
-
     width: 100%;
+}
+
+.search-bar.dark {
+    background-color: var(--Dark-blue);
 }
 
 .search-username {
@@ -146,12 +159,22 @@ h4 {
     justify-content: space-between;
     width: 100%;
 }
+
 .user-input {
     background-color: inherit;
     border: none;
     min-width: 200px;
     outline: none;
     width: fit-content;
+}
+
+.user-input.dark {
+    color: #fff;
+}
+
+.user-input.dark::placeholder {
+    opacity: 100%;
+    color: #fff;
 }
 
 .error-message {
@@ -191,15 +214,21 @@ h4 {
     padding: 44px;
 }
 
+.user-info.dark {
+    background-color: var(--Dark-blue);
+}
+
 .info-top {
     display: flex;
     flex-direction: row;
+    height: 65px;
 }
 
 .info-left {
     background-color: inherit;
     margin-right: 40px;
-    width: 200px;
+    width: 120px;
+    overflow: visible;
 }
 
 .user-avatar {
@@ -240,10 +269,15 @@ h4 {
     width: fit-content;
 }
 
+.user-name.dark,
+.user-joined.dark {
+    color: #fff;
+}
+
 .user-data {
     background-color: var(--App-white);
-    margin-top: -37px;
-    padding-left: 180px;
+    margin-top: 37px;
+    padding-left: 160px;
     background-color: transparent;
 }
 .user-bio {
@@ -252,6 +286,10 @@ h4 {
     height: fit-content;
     min-height: 28px;
     width: 100%;
+}
+
+.user-bio.dark {
+    color: #fff;
 }
 
 .user-figures {
@@ -266,6 +304,15 @@ h4 {
     padding: 15px 0 17px 0;
 }
 
+.user-figures.dark {
+    background-color: var(--Dark-grey-blue);
+    color: #fff;
+}
+
+.user-figures.dark p {
+    color: #fff;
+}
+
 .figure {
     color: var(--Dark-grey);
     font-weight: 700;
@@ -275,25 +322,45 @@ h4 {
     background-color: var(--App-white);
     margin-top: 32px;
     text-align: left;
-}
-
-.ul-top,
-.ul-bottom {
-    background-color: var(--App-white);
     display: flex;
     flex-direction: row;
-    width: 100%;
 }
 
-.ul-top {
-    margin-bottom: 21px;
+.user-links.dark {
+    background-color: var(--Dark-blue);
+}
+
+.ul-left,
+.ul-right {
+    background-color: var(--App-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.ul-left {
+    padding-right: 4px;
+}
+
+.ul-left.dark,
+.ul-right.dark {
+    background-color: var(--Dark-blue);
 }
 
 .link {
     background-color: var(--App-white);
     display: flex;
+    overflow-wrap: break-all;
     flex-direction: row;
-    width: 100%;
+    line-height: 22px;
+    align-items: center;
+    margin: 7.5px 0;
+}
+
+.link.dark {
+    background-color: var(--Dark-blue);
+    border-color: var(--Dark-blue);
 }
 
 .link p,
@@ -302,22 +369,35 @@ h4 {
     color: var(--Light-grey-blue);
 }
 
+.link.dark p,
+.link.dark a {
+    background-color: transparent;
+    color: #fff;
+}
+
+.link.n-a p,
+.link.n-a a {
+    opacity: 0.5;
+}
+
 .icon {
     background-color: transparent;
     font-weight: 700;
     margin-right: 1rem;
     max-height: 20px;
     max-width: 20px;
-}
 
-.twitter {
     filter: brightness(0) saturate(100%) invert(40%) sepia(9%) saturate(2718%)
         hue-rotate(178deg) brightness(94%) contrast(83%);
 }
 
-.twitter .n-a {
-    filter: brightness(0) saturate(100%) invert(40%) sepia(15%) saturate(1469%)
-        hue-rotate(178deg) brightness(96%) contrast(91%);
+.icon.dark {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+        hue-rotate(283deg) brightness(110%) contrast(101%);
+}
+
+.link.n-a .icon {
+    opacity: 0.5;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -338,6 +418,10 @@ h4 {
     .wrapper {
         min-width: 75vw;
         max-width: 75vw;
+    }
+
+    .info-top {
+        height: fit-content;
     }
 
     .info-right {
@@ -451,11 +535,16 @@ h4 {
         font-size: 1rem;
     }
 
-    .ul-top,
-    .ul-bottom {
+    .user-links {
         flex-direction: column;
+    }
+
+    .ul-left,
+    .ul-right {
+        padding: 0;
         margin: 0;
         font-size: 0.8rem;
+        width: 100%;
     }
 
     .user-links,
@@ -471,7 +560,7 @@ h4 {
 
     .user-links .link {
         font-size: 0.8rem;
-        padding: 0.5rem 0;
+        padding: 0;
     }
 }
 
