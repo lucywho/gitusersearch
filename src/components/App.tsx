@@ -12,8 +12,8 @@ export default function App() {
     )
     const [darkMode, toggleDarkMode] = useState<Boolean>(false)
 
-    async function handleSubmit(userInput: string) {
-        await fetchData(userInput).then((res) => {
+    function handleSubmit(userInput: string) {
+        fetchData(userInput).then((res) => {
             const gitUserInfo = res
             gitUserInfo === undefined
                 ? setErrorMessage("No results")
