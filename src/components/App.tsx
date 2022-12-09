@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 import UserInfo from "./UserInfo"
 import SearchBar from "./SearchBar"
 import CardHeader from "./CardHeader"
@@ -11,6 +11,14 @@ export default function App() {
         ""
     )
     const [darkMode, toggleDarkMode] = useState<Boolean>(false)
+
+    useEffect(() => {
+        const userPref = window.matchMedia("(prefers-color-scheme: dark)")
+        console.log(userPref.matches)
+        if (userPref.matches) {
+            toggleDarkMode(true)
+        }
+    }, [])
 
     function handleSubmit(userInput: string) {
         fetchData(userInput).then((res) => {
