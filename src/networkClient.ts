@@ -11,5 +11,5 @@ export async function fetchGitHubData(userName: string) {
     //TODO delete this when using live data
     // const results = testData
 
-    return results
+    //return results
 }
