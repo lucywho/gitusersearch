@@ -26,7 +26,7 @@ export default function App() {
     const toggleMode = () => toggleDarkMode(!darkMode)
 
     return (
-        <div className={`app ${darkMode && "dark"}`}>
+        <div className={`app ${darkMode ? "dark" : ""}`}>
             <div className="wrapper">
                 <CardHeader darkMode={darkMode} toggleMode={toggleMode} />
                 <SearchBar

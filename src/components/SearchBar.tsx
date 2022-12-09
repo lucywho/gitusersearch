@@ -29,7 +29,7 @@ export default function SearchBar({
     }
 
     return (
-        <div className={`search-bar ${darkMode && "dark"}`}>
+        <div className={`search-bar ${darkMode ? "dark" : ""}`}>
             <img
                 className="magnifier icon"
                 src={SearchIcon}
@@ -37,7 +37,7 @@ export default function SearchBar({
             ></img>
             <form className="search-username" onSubmit={handleFormSubmit}>
                 <input
-                    className={`user-input ${darkMode && "dark"}`}
+                    className={`user-input ${darkMode ? "dark" : ""}`}
                     type="text"
                     value={userInput}
                     onChange={handleChange}
