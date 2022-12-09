@@ -1,4 +1,4 @@
-//import testData from "./testData.json"
+import testData from "./testData.json"
 
 export async function fetchGitHubData(userName: string) {
     //TODO comment out for testing

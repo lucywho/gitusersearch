@@ -60,7 +60,7 @@ export default function UserInfo(props: Props) {
                     <div
                         className={`link location ${
                             !props.location ? "n-a" : ""
-                        } ${darkMode ? "dark" : ""} `}
+                        } `}
                     >
                         <img
                             className={`icon ${darkMode ? "dark" : ""}`}
@@ -73,11 +73,7 @@ export default function UserInfo(props: Props) {
                             <p>Not Available</p>
                         )}
                     </div>
-                    <div
-                        className={`link blog ${!props.blog ? "n-a" : ""} ${
-                            darkMode ? "dark" : ""
-                        }`}
-                    >
+                    <div className={`link blog ${!props.blog ? "n-a" : ""} `}>
                         <img
                             className={`icon ${darkMode ? "dark" : ""}`}
                             src={LinkIcon}
@@ -93,7 +89,7 @@ export default function UserInfo(props: Props) {
                     <div
                         className={`link twitter ${
                             !props.twitter_username ? "n-a" : ""
-                        } ${darkMode ? "dark" : ""}`}
+                        } `}
                     >
                         <img
                             className={`icon ${darkMode ? "dark" : ""}`}
@@ -109,7 +105,7 @@ export default function UserInfo(props: Props) {
                     <div
                         className={`link html-url ${
                             !props.html_url ? "n-a" : ""
-                        } ${darkMode ? "dark" : ""}`}
+                        } `}
                     >
                         <img
                             className={`icon ${darkMode ? "dark" : ""}`}
