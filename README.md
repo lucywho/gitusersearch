@@ -24,7 +24,7 @@ Users should be able to:
 -   Search for GitHub users by their username
 -   See relevant user information based on their search
 -   Switch between light and dark themes
--   Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS. (Currently only working on Firefox)
+-   Bonus: Have the correct color scheme chosen for them based on their computer preferences. (Currently only working on Firefox)
 
 ### Screenshot
 
