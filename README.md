@@ -1,4 +1,4 @@
-# Frontend Mentor - Expenses chart component solution
+# Frontend Mentor - Git Hub User Search solution
 
 This is a solution to the [GitHub User Search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6).
 
